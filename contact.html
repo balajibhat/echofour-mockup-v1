@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Contact — EchoFour</title>
+<meta name="description" content="Reach EchoFour. For collector enquiries, gallery partnerships, press requests, and artist submissions." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<header class="site-nav">
+  <div class="site-nav-inner">
+    <a href="index.html" class="brand-mark">EchoFour</a>
+    <nav class="nav-links">
+      <a href="originals.html" class="nav-link">Gallery Originals</a>
+      <a href="prints.html" class="nav-link">Limited Prints</a>
+      <a href="about.html" class="nav-link">About</a>
+      <a href="contact.html" class="nav-link" aria-current="page">Contact</a>
+      <a href="terms.html" class="nav-link">T&amp;C</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+<section class="hero">
+  <div class="hero-inner">
+    <div class="eyebrow hero-eyebrow">Contact</div>
+    <h1 class="display-l">A person, not a queue.</h1>
+    <p style="margin-top: 24px; max-width: 640px;">Email reaches a real human, usually within one working day. For everything else, the form below routes to the right team based on what you're after.</p>
+  </div>
+</section>
+
+<section class="section" style="padding-top: 0;">
+  <div class="container" style="display: grid; grid-template-columns: 1.1fr 1fr; gap: 72px; align-items: start;">
+
+    <!-- Form -->
+    <div>
+      <h2 class="display-m" style="margin-bottom: 24px;">Send us a note.</h2>
+
+      <form class="contact-form" onsubmit="event.preventDefault();">
+
+        <div class="form-field">
+          <label>What's this about?</label>
+          <select required>
+            <option>Collector enquiry &middot; specific work</option>
+            <option>Collector enquiry &middot; general</option>
+            <option>Gallery partnership</option>
+            <option>Artist submission</option>
+            <option>Press &amp; media</option>
+            <option>Something else</option>
+          </select>
+        </div>
+
+        <div class="form-field">
+          <label>Your name</label>
+          <input type="text" placeholder="Full name" required />
+        </div>
+
+        <div class="form-field">
+          <label>Email</label>
+          <input type="email" placeholder="you@domain.com" required />
+        </div>
+
+        <div class="form-field">
+          <label>Phone (optional)</label>
+          <input type="tel" placeholder="Including country code" />
+        </div>
+
+        <div class="form-field">
+          <label>Message</label>
+          <textarea placeholder="Tell us what you're after. If it's about a specific work, including the title and artist helps us route faster." required></textarea>
+        </div>
+
+        <button class="purchase-btn" type="submit" style="margin-top: 8px;">Send message</button>
+        <div class="purchase-note">By sending this you agree to our <a href="privacy.html" class="text-link" style="font-size: 11px;">privacy policy</a>. We reply within one working day, usually faster.</div>
+
+      </form>
+    </div>
+
+    <!-- Side: direct emails + offices -->
+    <aside>
+      <div class="eyebrow" style="margin-bottom: 18px;">Direct lines</div>
+
+      <div style="border-top: 1px solid var(--border); padding: 18px 0; border-bottom: 1px solid var(--border);">
+        <div class="label muted">Collectors</div>
+        <a href="mailto:hello@echofour.art" class="text-link" style="margin-top: 8px; display: inline-block;">hello@echofour.art</a>
+      </div>
+
+      <div style="padding: 18px 0; border-bottom: 1px solid var(--border);">
+        <div class="label muted">Galleries &amp; partnerships</div>
+        <a href="mailto:galleries@echofour.art" class="text-link" style="margin-top: 8px; display: inline-block;">galleries@echofour.art</a>
+      </div>
+
+      <div style="padding: 18px 0; border-bottom: 1px solid var(--border);">
+        <div class="label muted">Artist submissions</div>
+        <a href="mailto:artists@echofour.art" class="text-link" style="margin-top: 8px; display: inline-block;">artists@echofour.art</a>
+        <p class="body-s" style="margin-top: 6px;">We accept open submissions but only during the four-week window each January. Outside that, we'll archive your message until the next round.</p>
+      </div>
+
+      <div style="padding: 18px 0; border-bottom: 1px solid var(--border);">
+        <div class="label muted">Press</div>
+        <a href="mailto:press@echofour.art" class="text-link" style="margin-top: 8px; display: inline-block;">press@echofour.art</a>
+      </div>
+
+      <div style="padding: 24px 0 0;">
+        <div class="label muted">Studio address</div>
+        <p class="body-m" style="margin-top: 8px;">EchoFour FZ-LLC<br />Meydan Free Zone<br />Dubai, United Arab Emirates</p>
+        <p class="body-s muted" style="margin-top: 6px;">Trade licence 2648040.01 &middot; VAT TRN 100123456700003</p>
+      </div>
+
+    </aside>
+
+  </div>
+</section>
+
+</main>
+
+<!-- ============= FOOTER ============= -->
+<footer class="site-footer">
+  <div class="site-footer-grid">
+
+    <div class="footer-col footer-newsletter">
+      <h4>Be the first to know.</h4>
+      <p>Originals as they're listed. Prints when an artist is ready. One email per drop, no spam.</p>
+      <form class="footer-newsletter-form" onsubmit="event.preventDefault();">
+        <input type="email" placeholder="Email address" />
+        <button type="submit">Subscribe</button>
+      </form>
+    </div>
+
+    <div class="footer-col">
+      <h4>Browse</h4>
+      <ul>
+        <li><a href="originals.html">Gallery Originals</a></li>
+        <li><a href="prints.html">Limited Prints</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h4>Support</h4>
+      <ul>
+        <li><a href="shipping.html">Shipping</a></li>
+        <li><a href="refund.html">Returns &amp; refunds</a></li>
+        <li><a href="contact.html">Press &amp; gallery enquiries</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h4>Legal</h4>
+      <ul>
+        <li><a href="terms.html">Terms &amp; Conditions</a></li>
+        <li><a href="privacy.html">Privacy Policy</a></li>
+        <li><a href="privacy.html#cookies">Cookie Policy</a></li>
+        <li><a href="terms.html#aml">AML Notice</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h4>Follow</h4>
+      <ul>
+        <li><a href="https://instagram.com/echofour" target="_blank" rel="noopener">Instagram &nearr;</a></li>
+        <li><a href="https://twitter.com/echofour" target="_blank" rel="noopener">Twitter &nearr;</a></li>
+      </ul>
+    </div>
+
+  </div>
+
+  <div class="site-footer-bottom">
+    <div class="payment-icons">
+      <span class="payment-icon">VISA</span>
+      <span class="payment-icon">MC</span>
+      <span class="payment-icon">AMEX</span>
+      <span class="payment-icon">Apple Pay</span>
+      <span class="payment-icon">Google Pay</span>
+    </div>
+    <div class="footer-meta">
+      <span>&#127462;&#127466; United Arab Emirates &middot; AED</span>
+      <span>Trade licence: 2648040.01</span>
+      <span>&copy; 2026 EchoFour. All rights reserved.</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,16 @@
+# QA artifacts (Playwright)
+qa-*.png
+.playwright-mcp/
+console-*.log
+
+# Raw video source (kept out of repo, compressed mp4s in assets/ are the published versions)
+hero-loop.mp4
+assets/hero-loop.mp4
+
+# OS / editor cruft
+.DS_Store
+Thumbs.db
+*.tmp
+*~
+.vscode/
+.idea/
