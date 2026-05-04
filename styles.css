@@ -33,7 +33,7 @@ html { scroll-behavior: smooth; }
 body {
   font-family: var(--font-body);
   color: var(--ink);
-  background: var(--bg-warm);
+  background: var(--bg);
   line-height: 1.55;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -69,7 +69,7 @@ h1, h2, h3, h4, .display, .eyebrow, .nav-link, .btn { font-family: var(--font-di
   position: sticky;
   top: 0;
   z-index: 100;
-  background: rgba(245, 240, 232, 0.92);
+  background: rgba(255, 255, 255, 0.92);
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
   border-bottom: 1px solid var(--border);
@@ -358,15 +358,15 @@ h1, h2, h3, h4, .display, .eyebrow, .nav-link, .btn { font-family: var(--font-di
   font-size: 11px;
   letter-spacing: 0.2em;
   text-transform: uppercase;
-  background: var(--accent);
-  color: var(--bg-cream-light);
-  border: 1px solid var(--accent);
+  background: var(--ink);
+  color: white;
+  border: 1px solid var(--ink);
   text-decoration: none;
   transition: all 220ms ease;
 }
-.btn:hover { background: var(--accent-deep); border-color: var(--accent-deep); }
-.btn.btn-ghost { background: transparent; color: var(--accent); border-color: var(--accent); }
-.btn.btn-ghost:hover { background: var(--accent); color: var(--bg-cream-light); border-color: var(--accent); }
+.btn:hover { background: var(--accent); border-color: var(--accent); }
+.btn.btn-ghost { background: transparent; color: var(--ink); }
+.btn.btn-ghost:hover { background: var(--ink); color: white; border-color: var(--ink); }
 .btn.btn-large { padding: 18px 28px; font-size: 12px; }
 
 .text-link {
@@ -482,13 +482,13 @@ h1, h2, h3, h4, .display, .eyebrow, .nav-link, .btn { font-family: var(--font-di
   font-size: 12px;
   letter-spacing: 0.2em;
   text-transform: uppercase;
-  background: var(--accent);
-  color: var(--bg-cream-light);
-  border: 1px solid var(--accent);
+  background: var(--ink);
+  color: white;
+  border: 1px solid var(--ink);
   cursor: pointer;
   transition: all 240ms ease;
 }
-.purchase-btn:hover { background: var(--accent-deep); border-color: var(--accent-deep); }
+.purchase-btn:hover { background: var(--accent); border-color: var(--accent); }
 .purchase-btn[disabled] { background: var(--bg-warm); color: var(--ink-light); border-color: var(--border); cursor: not-allowed; }
 .purchase-note { font-size: 11px; color: var(--ink-muted); margin-top: 8px; line-height: 1.6; }
 
@@ -534,7 +534,7 @@ h1, h2, h3, h4, .display, .eyebrow, .nav-link, .btn { font-family: var(--font-di
 
 /* ============= FOOTER (Avant Arte-style) ============= */
 .site-footer {
-  background: var(--bg-stage);
+  background: var(--bg);
   border-top: 1px solid var(--border);
   padding: 80px var(--gutter) 32px;
   margin-top: 96px;
