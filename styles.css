@@ -16,7 +16,7 @@
   --border: #e2dccc;         /* harmonised with cream */
   --border-strong: #2a2a2a;
   --available: #10b981;
-  --sold: #6B1D2A;           /* maroon (was bright red) */
+  --sold: #FF2C2C;           /* vivid red for sold/status indicators */
   --accent: #6B1D2A;         /* maroon (was #d43a3a) */
   --accent-deep: #4A1119;    /* maroon-deep, used for hovers */
 
