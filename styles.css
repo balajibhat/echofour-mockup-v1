@@ -33,7 +33,7 @@ html { scroll-behavior: smooth; }
 body {
   font-family: var(--font-body);
   color: var(--ink);
-  background: var(--bg);
+  background: var(--bg-warm);
   line-height: 1.55;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -69,7 +69,7 @@ h1, h2, h3, h4, .display, .eyebrow, .nav-link, .btn { font-family: var(--font-di
   position: sticky;
   top: 0;
   z-index: 100;
-  background: rgba(255, 255, 255, 0.92);
+  background: rgba(245, 240, 232, 0.92);
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
   border-bottom: 1px solid var(--border);
@@ -199,6 +199,74 @@ h1, h2, h3, h4, .display, .eyebrow, .nav-link, .btn { font-family: var(--font-di
 }
 .split-pane.prints .pane-imagery .pi { aspect-ratio: 4 / 3; }
 
+/* ============= FILTERS (Originals page) ============= */
+.filters {
+  position: sticky;
+  top: 60px;
+  z-index: 90;
+  background: rgba(245, 240, 232, 0.94);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  padding: 18px var(--gutter);
+}
+.filters-inner {
+  max-width: var(--container);
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.filter-group { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; }
+.filter-label {
+  font-family: var(--font-display);
+  font-size: 10px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--ink-muted);
+  margin-right: 12px;
+  min-width: 70px;
+}
+.filter-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 14px;
+  font-family: var(--font-display);
+  font-size: 11px;
+  letter-spacing: 0.06em;
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--ink);
+  cursor: pointer;
+  transition: all 200ms ease;
+  white-space: nowrap;
+}
+.filter-chip:hover { border-color: var(--accent); color: var(--accent); }
+.filter-chip.active {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: var(--bg-cream-light);
+}
+.filter-chip .chip-count {
+  font-size: 9px;
+  letter-spacing: 0.1em;
+  color: var(--ink-muted);
+  padding-left: 4px;
+}
+.filter-chip.active .chip-count { color: rgba(245, 240, 232, 0.7); }
+
+.filter-empty {
+  display: none;
+  text-align: center;
+  padding: 80px var(--gutter);
+  color: var(--ink-muted);
+  font-size: 14px;
+  font-style: italic;
+}
+.filter-empty.visible { display: block; }
+
 /* ============= GALLERY MATRIX (Originals page) ============= */
 .gallery-row { padding: 56px 0 24px; border-top: 1px solid var(--border); }
 .gallery-row:first-of-type { border-top: 0; padding-top: 24px; }
@@ -290,15 +358,15 @@ h1, h2, h3, h4, .display, .eyebrow, .nav-link, .btn { font-family: var(--font-di
   font-size: 11px;
   letter-spacing: 0.2em;
   text-transform: uppercase;
-  background: var(--ink);
-  color: white;
-  border: 1px solid var(--ink);
+  background: var(--accent);
+  color: var(--bg-cream-light);
+  border: 1px solid var(--accent);
   text-decoration: none;
   transition: all 220ms ease;
 }
-.btn:hover { background: var(--accent); border-color: var(--accent); }
-.btn.btn-ghost { background: transparent; color: var(--ink); }
-.btn.btn-ghost:hover { background: var(--ink); color: white; border-color: var(--ink); }
+.btn:hover { background: var(--accent-deep); border-color: var(--accent-deep); }
+.btn.btn-ghost { background: transparent; color: var(--accent); border-color: var(--accent); }
+.btn.btn-ghost:hover { background: var(--accent); color: var(--bg-cream-light); border-color: var(--accent); }
 .btn.btn-large { padding: 18px 28px; font-size: 12px; }
 
 .text-link {
@@ -414,13 +482,13 @@ h1, h2, h3, h4, .display, .eyebrow, .nav-link, .btn { font-family: var(--font-di
   font-size: 12px;
   letter-spacing: 0.2em;
   text-transform: uppercase;
-  background: var(--ink);
-  color: white;
-  border: 1px solid var(--ink);
+  background: var(--accent);
+  color: var(--bg-cream-light);
+  border: 1px solid var(--accent);
   cursor: pointer;
   transition: all 240ms ease;
 }
-.purchase-btn:hover { background: var(--accent); border-color: var(--accent); }
+.purchase-btn:hover { background: var(--accent-deep); border-color: var(--accent-deep); }
 .purchase-btn[disabled] { background: var(--bg-warm); color: var(--ink-light); border-color: var(--border); cursor: not-allowed; }
 .purchase-note { font-size: 11px; color: var(--ink-muted); margin-top: 8px; line-height: 1.6; }
 
@@ -466,7 +534,7 @@ h1, h2, h3, h4, .display, .eyebrow, .nav-link, .btn { font-family: var(--font-di
 
 /* ============= FOOTER (Avant Arte-style) ============= */
 .site-footer {
-  background: var(--bg);
+  background: var(--bg-stage);
   border-top: 1px solid var(--border);
   padding: 80px var(--gutter) 32px;
   margin-top: 96px;

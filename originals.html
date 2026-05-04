@@ -33,17 +33,30 @@
     <h1 class="display-l">Gallery Originals.</h1>
     <p style="margin-top: 24px;">Curated original works from four partner galleries across Dubai, Lisbon, and London. Each piece is unique, with one owner. We hold preview windows weekly. Acquisitions are direct from gallery, escrowed via EchoFour, and shipped insured.</p>
 
-    <div class="flex-row" style="margin-top: 36px; gap: 18px; flex-wrap: wrap;">
-      <a href="#blonde-contemporary" class="text-link">Blonde Contemporary</a>
-      <span class="muted body-s">&middot;</span>
-      <a href="#grey-noise" class="text-link">Grey Noise</a>
-      <span class="muted body-s">&middot;</span>
-      <a href="#carbon-12" class="text-link">Carbon 12</a>
-      <span class="muted body-s">&middot;</span>
-      <a href="#efie-gallery" class="text-link">Efie Gallery</a>
+  </div>
+</section>
+
+<!-- ============= FILTERS ============= -->
+<section class="filters" aria-label="Filter works">
+  <div class="filters-inner">
+    <div class="filter-group">
+      <span class="filter-label">Status</span>
+      <button type="button" class="filter-chip active" data-filter-status="all">All<span class="chip-count">12</span></button>
+      <button type="button" class="filter-chip" data-filter-status="available">Available<span class="chip-count">10</span></button>
+      <button type="button" class="filter-chip" data-filter-status="sold">Sold<span class="chip-count">2</span></button>
+    </div>
+    <div class="filter-group">
+      <span class="filter-label">Gallery</span>
+      <button type="button" class="filter-chip active" data-filter-gallery="all">All galleries</button>
+      <button type="button" class="filter-chip" data-filter-gallery="blonde-contemporary">Blonde Contemporary</button>
+      <button type="button" class="filter-chip" data-filter-gallery="grey-noise">Grey Noise</button>
+      <button type="button" class="filter-chip" data-filter-gallery="carbon-12">Carbon 12</button>
+      <button type="button" class="filter-chip" data-filter-gallery="efie-gallery">Efie Gallery</button>
     </div>
   </div>
 </section>
+
+<div class="filter-empty" id="filter-empty">No works match these filters. Try clearing one of the selections above.</div>
 
 <!-- ============= GALLERY 1: BLONDE CONTEMPORARY ============= -->
 <section id="blonde-contemporary" class="gallery-row">
@@ -302,6 +315,53 @@
     </div>
   </div>
 </footer>
+
+<!-- ============= FILTER LOGIC ============= -->
+<script>
+  let stateStatus = 'all';
+  let stateGallery = 'all';
+  const galleryRows = document.querySelectorAll('.gallery-row');
+  const emptyState = document.getElementById('filter-empty');
+
+  document.querySelectorAll('[data-filter-status]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('[data-filter-status]').forEach(x => x.classList.remove('active'));
+      btn.classList.add('active');
+      stateStatus = btn.dataset.filterStatus;
+      apply();
+    });
+  });
+
+  document.querySelectorAll('[data-filter-gallery]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('[data-filter-gallery]').forEach(x => x.classList.remove('active'));
+      btn.classList.add('active');
+      stateGallery = btn.dataset.filterGallery;
+      apply();
+    });
+  });
+
+  function apply() {
+    let totalVisible = 0;
+    galleryRows.forEach(row => {
+      const rowGallery = row.id;
+      const galleryMatches = stateGallery === 'all' || stateGallery === rowGallery;
+      let rowVisibleTiles = 0;
+      row.querySelectorAll('.tile').forEach(tile => {
+        const isSold = tile.querySelector('.tile-status-dot.sold') !== null;
+        const statusMatches = stateStatus === 'all'
+          || (stateStatus === 'sold' && isSold)
+          || (stateStatus === 'available' && !isSold);
+        const visible = galleryMatches && statusMatches;
+        tile.style.display = visible ? '' : 'none';
+        if (visible) rowVisibleTiles++;
+      });
+      row.style.display = (galleryMatches && rowVisibleTiles > 0) ? '' : 'none';
+      totalVisible += rowVisibleTiles;
+    });
+    emptyState.classList.toggle('visible', totalVisible === 0);
+  }
+</script>
 
 </body>
 </html>
