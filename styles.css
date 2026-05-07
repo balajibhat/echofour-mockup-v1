@@ -811,6 +811,69 @@ h1, h2, h3, h4, .display, .eyebrow, .nav-link, .btn { font-family: var(--font-di
   white-space: nowrap;
 }
 
+/* ============= CUBE GRID (homepage 2x2, expand on hover) ============= */
+.cube-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 6px;
+  height: 640px;
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 0 var(--gutter);
+  transition: grid-template-columns 600ms cubic-bezier(0.2, 0.8, 0.2, 1), grid-template-rows 600ms cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+.cube-tile {
+  position: relative;
+  overflow: hidden;
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+  background-color: var(--bg-warm);
+  transition: opacity 400ms ease;
+}
+.cube-tile-image {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  transition: transform 600ms cubic-bezier(0.2, 0.8, 0.2, 1), filter 400ms ease;
+}
+.cube-grid:hover .cube-tile:not(:hover) { opacity: 0.55; }
+.cube-grid:hover .cube-tile:not(:hover) .cube-tile-image { filter: blur(2px) brightness(0.85); }
+.cube-tile:hover .cube-tile-image { transform: scale(1.04); }
+.cube-tile-status-dot {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  box-shadow: 0 0 0 1.5px white;
+  z-index: 3;
+}
+.cube-tile-status-dot.available { background: var(--available); }
+.cube-tile-status-dot.sold { background: var(--sold); }
+.cube-tile-info {
+  position: absolute;
+  inset: auto 0 0 0;
+  padding: 22px 24px 22px;
+  background: linear-gradient(180deg, transparent 0%, rgba(10,10,10,0.78) 100%);
+  color: white;
+  opacity: 0;
+  transform: translateY(8px);
+  transition: opacity 360ms ease, transform 360ms ease;
+  z-index: 2;
+}
+.cube-tile:hover .cube-tile-info { opacity: 1; transform: translateY(0); }
+.cube-tile-info .ct-title { font-family: var(--font-display); font-size: 16px; font-weight: 500; }
+.cube-tile-info .ct-artist { font-family: var(--font-display); font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; opacity: 0.78; margin-top: 4px; }
+.cube-tile-info .ct-price { font-family: var(--font-display); font-size: 12px; margin-top: 8px; }
+.cube-grid:has(.cube-tile.cube-1:hover) { grid-template-columns: 2.2fr 1fr; grid-template-rows: 2.2fr 1fr; }
+.cube-grid:has(.cube-tile.cube-2:hover) { grid-template-columns: 1fr 2.2fr; grid-template-rows: 2.2fr 1fr; }
+.cube-grid:has(.cube-tile.cube-3:hover) { grid-template-columns: 2.2fr 1fr; grid-template-rows: 1fr 2.2fr; }
+.cube-grid:has(.cube-tile.cube-4:hover) { grid-template-columns: 1fr 2.2fr; grid-template-rows: 1fr 2.2fr; }
+
 /* ============= LOCKED DROP HERO (Prints page) ============= */
 .drop-hero {
   display: grid;
@@ -1097,6 +1160,10 @@ h1, h2, h3, h4, .display, .eyebrow, .nav-link, .btn { font-family: var(--font-di
   .portal { grid-template-columns: 1fr; padding: 40px 24px; min-height: auto; }
   .portal:first-child { border-right: 0; border-bottom: 1px solid var(--border); }
   .portal-visual { min-height: 200px; }
+  .cube-grid { height: auto; gap: 4px; padding: 0 24px; grid-template-columns: 1fr 1fr; grid-template-rows: 1fr 1fr; }
+  .cube-grid:has(.cube-tile:hover) { grid-template-columns: 1fr 1fr; grid-template-rows: 1fr 1fr; }
+  .cube-tile { aspect-ratio: 1 / 1; }
+  .cube-tile-info { opacity: 1; transform: none; padding: 14px; background: linear-gradient(180deg, transparent 30%, rgba(10,10,10,0.82) 100%); }
   .site-footer-grid { grid-template-columns: 1fr 1fr; gap: 32px; }
   .footer-newsletter { grid-column: 1 / -1; }
 }

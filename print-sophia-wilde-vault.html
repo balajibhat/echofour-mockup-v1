@@ -16,11 +16,11 @@
   <div class="site-nav-inner">
     <a href="index.html" class="brand-mark">EchoFour</a>
     <nav class="nav-links">
-      <a href="originals.html" class="nav-link">Gallery Originals</a>
-      <a href="prints.html" class="nav-link" aria-current="page">Limited Prints</a>
+      <a href="originals.html" class="nav-link">Originals</a>
+      <a href="prints.html" class="nav-link" aria-current="page">Prints</a>
       <a href="about.html" class="nav-link">About</a>
       <a href="contact.html" class="nav-link">Contact</a>
-      <a href="terms.html" class="nav-link">T&amp;C</a>
+      <a href="faq.html" class="nav-link">FAQ</a>
     </nav>
   </div>
 </header>
@@ -30,7 +30,7 @@
 <!-- Breadcrumb -->
 <div class="container" style="padding-top: 24px; padding-bottom: 0;">
   <div class="body-s">
-    <a href="prints.html" class="muted">Limited Prints</a>
+    <a href="prints.html" class="muted">Prints</a>
     <span class="muted"> &nbsp;/&nbsp; </span>
     <span>Drop 03 &middot; Vault &middot; Sophia Wilde</span>
   </div>
@@ -39,22 +39,21 @@
 <!-- ============= DETAIL ============= -->
 <section class="detail">
 
-  <!-- Imagery -->
+  <!-- Locked imagery (revealed at drop window) -->
   <div class="detail-imagery">
-    <div class="detail-hero">
-      <div class="frame active t14"></div>
-      <div class="frame t11"></div>
-      <div class="frame t5"></div>
-      <div class="frame t7"></div>
-      <button class="detail-hero-arrow prev" type="button" aria-label="Previous image">&larr;</button>
-      <button class="detail-hero-arrow next" type="button" aria-label="Next image">&rarr;</button>
-    </div>
-
-    <div class="detail-thumbs">
-      <div class="thumb t14 active"></div>
-      <div class="thumb t11"></div>
-      <div class="thumb t5"></div>
-      <div class="thumb t7"></div>
+    <div class="drop-locked" style="aspect-ratio: 1 / 1.05;">
+      <div class="drop-locked-bg t14"></div>
+      <div class="drop-locked-noise"></div>
+      <div class="drop-locked-content">
+        <div class="drop-locked-lock">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="5" y="11" width="14" height="9" rx="1.2"></rect>
+            <path d="M8 11V7a4 4 0 1 1 8 0v4"></path>
+          </svg>
+        </div>
+        <div class="drop-locked-label">The Work, Locked Until Drop</div>
+        <div class="drop-locked-reveal">The image, the title, and the artist's note are revealed 60 minutes before the window opens.</div>
+      </div>
     </div>
   </div>
 
@@ -90,15 +89,15 @@
 
     <div class="detail-price">AED 800 <span class="body-s muted" style="margin-left: 12px; letter-spacing: 0.04em;">per print, ex. shipping</span></div>
 
-    <button class="purchase-btn" type="button" disabled>Drop opens in 71 days</button>
-    <div class="purchase-note">When the window opens, sign-in collectors will be released into the queue in order of email signup. To join the queue, add your email to the notify list. No payment is taken until the window opens.</div>
+    <button class="purchase-btn" type="button" disabled>Collect when drop opens &middot; 71 days</button>
+    <div class="purchase-note">When the window opens, the queue is released in order of notify signup. No payment is taken until the window opens.</div>
 
     <!-- Notify -->
     <div class="form-row" style="margin-top: 14px;">
       <label>Notify me</label>
       <input type="email" placeholder="you@domain.com" />
     </div>
-    <button class="purchase-btn btn-ghost" type="button" style="margin-top: 12px; background: transparent; color: var(--ink);">Add to notify queue &middot; Position #1,247</button>
+    <button class="purchase-btn btn-ghost" type="button" style="margin-top: 12px;">Join notify queue &middot; Position #1,247</button>
 
     <!-- Dropdowns -->
     <div class="detail-dropdowns">
@@ -172,7 +171,7 @@
         <div class="tile-caption">
           <div class="ct-title">Lineage &middot; Drop 01</div>
           <div class="ct-artist">Lina Choudhury &middot; Nov 2025</div>
-          <div class="ct-price">450 / 450 sold</div>
+          <div class="ct-price">450 / 450 collected</div>
         </div>
       </a>
 
@@ -182,7 +181,7 @@
         <div class="tile-caption">
           <div class="ct-title">Field Notes &middot; Drop 02</div>
           <div class="ct-artist">Bashir Owusu &middot; Feb 2026</div>
-          <div class="ct-price">500 / 500 sold</div>
+          <div class="ct-price">500 / 500 collected</div>
         </div>
       </a>
 
@@ -218,8 +217,8 @@
     <div class="footer-col">
       <h4>Browse</h4>
       <ul>
-        <li><a href="originals.html">Gallery Originals</a></li>
-        <li><a href="prints.html">Limited Prints</a></li>
+        <li><a href="originals.html">Originals</a></li>
+        <li><a href="prints.html">Prints</a></li>
         <li><a href="about.html">About</a></li>
         <li><a href="contact.html">Contact</a></li>
       </ul>
